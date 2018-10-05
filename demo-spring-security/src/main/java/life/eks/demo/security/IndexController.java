@@ -13,4 +13,9 @@ public class IndexController {
     public String index() {
         return "hello spring security";
     }
+
+    @RequestMapping("/api")
+    public String adminApi() {
+        return "admin hello spring security";
+    }
 }
