@@ -1,16 +1,21 @@
 package life.eks.demo.security;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Eks OU
  */
-@RestController
+@Controller
 public class IndexController {
 
     @RequestMapping("/")
     public String index() {
-        return "hello spring security";
+        return "index.html";
+    }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login.html";
     }
 }
