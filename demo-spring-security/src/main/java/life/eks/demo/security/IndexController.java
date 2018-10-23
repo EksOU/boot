@@ -2,6 +2,7 @@ package life.eks.demo.security;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author Eks OU
@@ -19,8 +20,10 @@ public class IndexController {
         return "login.html";
     }
 
-    @RequestMapping("/api")
+    @RequestMapping("/api/api")
+    @ResponseBody
     public String adminApi() {
         return "admin hello spring security";
     }
+
 }
