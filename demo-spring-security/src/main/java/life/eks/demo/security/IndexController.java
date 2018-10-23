@@ -18,4 +18,9 @@ public class IndexController {
     public String login() {
         return "login.html";
     }
+
+    @RequestMapping("/api")
+    public String adminApi() {
+        return "admin hello spring security";
+    }
 }
