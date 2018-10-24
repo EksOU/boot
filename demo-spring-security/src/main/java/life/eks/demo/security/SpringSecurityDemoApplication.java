@@ -45,11 +45,11 @@ public class SpringSecurityDemoApplication {
     @Configuration
     @Order(1)
     public static class ApiWebSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
         protected void configure(HttpSecurity http) throws Exception {
             http.antMatcher("/api/**")
                     .authorizeRequests()
-                    .anyRequest().hasRole("ADMIN")
-            ;
+                    .anyRequest().hasRole("ADMIN");
         }
     }
 
@@ -57,8 +57,8 @@ public class SpringSecurityDemoApplication {
     public static class FormLoginWebSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
-            http.authorizeRequests().antMatchers("/403.html").permitAll().anyRequest().authenticated()
-                    .and().formLogin().loginPage("/login").defaultSuccessUrl("/").permitAll()
+            http.authorizeRequests().antMatchers("/403.html","/").permitAll().anyRequest().authenticated()
+                    .and().formLogin().loginPage("/login").defaultSuccessUrl("/home").permitAll()
                     .and().logout().logoutUrl("/logout").permitAll()
                     .and().csrf().disable();
         }

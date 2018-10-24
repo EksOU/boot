@@ -10,10 +10,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class IndexController {
 
+    @RequestMapping("/home")
+    public String home() {
+        return "home.html";
+    }
+
     @RequestMapping("/")
     public String index() {
         return "index.html";
     }
+
 
     @RequestMapping("/login")
     public String login() {
