@@ -58,7 +58,8 @@ public class SpringSecurityDemoApplication {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests().antMatchers("/403.html","/").permitAll().anyRequest().authenticated()
-                    .and().formLogin().loginPage("/login").defaultSuccessUrl("/home").permitAll()
+//                    .and().formLogin().loginPage("/login").defaultSuccessUrl("/home").permitAll()
+                    .and().formLogin().loginPage("/login.html").loginProcessingUrl("/login").defaultSuccessUrl("/home").permitAll()
                     .and().logout().logoutUrl("/logout").permitAll()
                     .and().csrf().disable();
         }

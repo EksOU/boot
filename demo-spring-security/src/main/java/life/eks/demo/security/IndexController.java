@@ -15,16 +15,16 @@ public class IndexController {
         return "home.html";
     }
 
-    @RequestMapping("/")
-    public String index() {
-        return "index.html";
-    }
-
-
-    @RequestMapping("/login")
-    public String login() {
-        return "login.html";
-    }
+//    @RequestMapping("/")
+//    public String index() {
+//        return "index.html";
+//    }
+//
+//
+//    @RequestMapping("/login")
+//    public String login() {
+//        return "login.html";
+//    }
 
     @RequestMapping("/api/api")
     @ResponseBody
